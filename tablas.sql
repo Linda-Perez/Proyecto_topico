@@ -3,8 +3,8 @@ create table persona (
     apellidos varchar(25) not null,
     email varchar(30),
     direccion varchar(70),
-    telefono int,
-    celular int,
+    telefono varchar(12),
+    celular varchar(12),
     fecha_nac date,
     edad int,
     CURP varchar(18),
@@ -14,18 +14,17 @@ create table persona (
 create table profesor (
     tipo_contrato varchar(15),
     estudios_realizados varchar(30),
-    universidad varchar(30),
+    universidad varchar(35),
     titulo varchar(25),
     año_graduacion int,
     tipo_estudio varchar(15),
-    materias_dictar text,
-)inherits(persona);
+    materias_dictar text
+) inherits(persona);
 
 create table alumno (
      matricula varchar(15),
      cedula int,
-     constraint pk_alumno primary key (matricula),
-     constraint pk_cedula primary key (cedula),
+     constraint pk_alumno primary key (matricula,cedula)
 )inherits(persona);
 
 create table materia (
@@ -36,7 +35,9 @@ create table materia (
     n_horas int,
     horario varchar(15),
     profesor_imparte varchar(40),
-    calificacion int
+    calificacion int,
+    codigo int,
+    constraint pk_codigo primary key (codigo)
 );
 
 create table aula (
