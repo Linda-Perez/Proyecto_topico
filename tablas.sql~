@@ -55,7 +55,7 @@ create table materia_aula (
 
 create table curso (
     materia varchar(35),
-    salon varchar(4),
+    salon char(4),
     horario varchar(12),
     nombre varchar(40),
     codigo int,
