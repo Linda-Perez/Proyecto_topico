@@ -2,7 +2,7 @@ create table persona (
     nombre varchar(18) not null,
     apellidos varchar(25) not null,
     email varchar(30),
-    direccion varchar(70),
+    direccion text,
     telefono varchar(12),
     celular varchar(12),
     fecha_nac date,
@@ -16,7 +16,7 @@ create table profesor (
     estudios_realizados varchar(30),
     universidad varchar(35),
     titulo varchar(25),
-    año_graduacion int,
+    ano_graduacion int,
     tipo_estudio varchar(15),
     materias_dictar text
 ) inherits(persona);

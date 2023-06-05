@@ -8,12 +8,16 @@ public class Main
 	{
 		MiBD conexion =  new MiBD();
 		ResultSet result;
+		ResultSet result2;
+		ResultSet result3;
         ResultSet result4;
 		ResultSet result5;
 		ResultSet result6;
 		ResultSet result7;
 		ResultSet result8;
         persona persona= new persona();
+		profesor profesor = new profesor();
+		alumno alumno = new alumno();
         materia materia = new materia();
 		aula aula = new aula();
 		materia_aula materia_aula = new materia_aula();
@@ -45,6 +49,86 @@ public class Main
 				System.out.println("Edad: " + persona.edad);
 				System.out.println("CURP: " + persona.CURP);
                 System.out.println();
+			}
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		result2 = conexion.getQuery("select * from profesor");
+		try
+		{
+			while(result2.next())
+			{
+				profesor.nombre = result2.getString("nombre");
+				profesor.apellidos = result2.getString("apellidos");
+				profesor.email = result2.getString("email");
+				profesor.direccion = result2.getString("direccion");
+				profesor.telefono = result2.getString("telefono");
+				profesor.celular = result2.getString("celular");
+				profesor.fecha_nac = result2.getDate("fecha_nac");
+				profesor.edad = result2.getInt("edad");
+				profesor.CURP = result2.getString("curp");
+				profesor.tipo_contrato = result2.getString("tipo_contrato");
+				profesor.estudios_realizados = result2.getString("estudios_realizados");
+				profesor.universidad = result2.getString("universidad");
+				profesor.titulo = result2.getString("titulo");
+				profesor.ano_graduacion = result2.getInt("ano_graduacion");
+				profesor.tipo_estudio = result2.getString("tipo_estudio");
+				profesor.materias_dictar = result2.getString("materias_dictar");
+
+				System.out.println();
+				System.out.println (profesor.nombre +" " + profesor.apellidos);
+				System.out.println("Email: " + profesor.email);
+				System.out.println("Dirección: " + profesor.direccion);
+				System.out.println("Teléfono: " + profesor.telefono);
+				System.out.println("Celular: " + profesor.celular);
+				System.out.println("Fecha de nacimiento: " + profesor.fecha_nac);
+				System.out.println("Edad: " + profesor.edad);
+				System.out.println("CURP: " + profesor.CURP);
+				System.out.println("Tipo de contrato: " + profesor.tipo_contrato);
+				System.out.println("Estudios realizados: " + profesor.estudios_realizados);
+				System.out.println("Universidad: " + profesor.universidad);
+				System.out.println("Título: " + profesor.titulo);
+				System.out.println("Año de graduación: " + profesor.ano_graduacion);
+				System.out.println("Tipo de estudios: " + profesor.tipo_estudio);
+				System.out.println("Materias que puede dictar: " + profesor.materias_dictar);
+				System.out.println();
+			}
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		result3 = conexion.getQuery("select * from alumno");
+		try
+		{
+			while(result3.next())
+			{
+				alumno.nombre = result3.getString("nombre");
+				alumno.apellidos = result3.getString("apellidos");
+				alumno.email = result3.getString("email");
+				alumno.direccion = result3.getString("direccion");
+				alumno.telefono = result3.getString("telefono");
+				alumno.celular = result3.getString("celular");
+				alumno.fecha_nac = result3.getDate("fecha_nac");
+				alumno.edad = result3.getInt("edad");
+				alumno.CURP = result3.getString("curp");
+				alumno.matricula = result3.getString("matricula");
+				alumno.cedula = result3.getInt("cedula");
+
+				System.out.println();
+				System.out.println (alumno.nombre +" " + alumno.apellidos);
+				System.out.println("Email: " + alumno.email);
+				System.out.println("Dirección: " + alumno.direccion);
+				System.out.println("Teléfono: " + alumno.telefono);
+				System.out.println("Celular: " + alumno.celular);
+				System.out.println("Fecha de nacimiento: " + alumno.fecha_nac);
+				System.out.println("Edad: " + alumno.edad);
+				System.out.println("CURP: " + alumno.CURP);
+				System.out.println("Matrícula: " + alumno.matricula);
+				System.out.println("Cédula: " + alumno.cedula);
+				System.out.println();
 			}
 		}
 		catch (SQLException e)
