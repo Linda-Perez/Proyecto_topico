@@ -7,7 +7,7 @@ public class Agregar extends JFrame{
 
     Connection conexion;
     PreparedStatement ps;
-    //DefaultListModel model = new DefaultListModel();
+    DefaultListModel model = new DefaultListModel();
 
     private JTextField estudiosText;
     private JTextField nombreText;
@@ -51,7 +51,7 @@ public class Agregar extends JFrame{
         ps.setString(4,direccionText.getText());
         ps.setString(5,telefonoText.getText());
         ps.setString(6,celularText.getText());
-        //ps.setDate(7, Date.valueOf(fechanacText.getText()));
+        ps.setDate(7, Date.valueOf(fechanacText.getText()));
         ps.setInt(8, Integer.parseInt(edadText.getText()));
         ps.setString(9,curpText.getText());
         ps.setString(10,tipocontratoText.getActionCommand());
@@ -61,6 +61,12 @@ public class Agregar extends JFrame{
         ps.setInt(14, Integer.parseInt(anograduacionText.getText()));
         ps.setString(15,tipoestudioText.getActionCommand());
         ps.setString(16,materiadictarText.getText());
+
+        if (ps.executeUpdate()>0){
+            model.removeAllElements();
+            model.addElement("Ingreso exitoso");
+
+        }
 
         nombreText.setText("");
         apellidoText.setText("");

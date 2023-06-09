@@ -328,7 +328,7 @@
         <properties>
           <background color="-12828863"/>
           <font size="8"/>
-          <text value="Ejemplo: 00-00-0000"/>
+          <text value="Ejemplo: YY-MM-DD"/>
         </properties>
       </component>
     </children>
