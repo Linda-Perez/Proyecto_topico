@@ -7,6 +7,7 @@ public class GUI_profesor extends JFrame{
     private JButton menuAgregar;
     private JButton menuConsultar;
     private JPanel menu_principal;
+    private JButton menuModificar;
 
 
     public static void main(String[] args) {

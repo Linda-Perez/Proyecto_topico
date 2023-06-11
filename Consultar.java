@@ -59,7 +59,9 @@ public class Consultar extends JFrame{
         ps.setString(1, eliminarcurp.getText());
         if (ps.executeUpdate()>0){
             System.out.println("Por favor, verifique si el elemento ha sido eliminado");
+
         }
+        eliminarcurp.setText("");
     }
     public static void main(String[] args) {
         Consultar f = new Consultar();
