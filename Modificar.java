@@ -39,11 +39,18 @@ public class Modificar extends JFrame{
                 }
             }
         });
+        menuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GUI_profesor modificaraamenu = new GUI_profesor();
+                modificaraamenu.setVisible(true);
+            }
+        });
     }
 
     public void modificar() throws SQLException {
         conectar();
-        ps = conexion.prepareStatement("update profesor set nombre = ?, apellido = ?, email = ?, direccion = ?, telefono = ?, celular = ?, fecha_nac = ?,edad = ?, tipo_contrato = ?, estudios_realizados = ?, universidad = ?, titulo =?,ano_graduacion =?,tipo_estudio = ?, materias_dictar where curp= ? ");
+        ps = conexion.prepareStatement("update profesor set nombre = ?, apellidos = ?, email = ?, direccion = ?, telefono = ?, celular = ?, fecha_nac = ?,edad = ?, tipo_contrato = ?, estudios_realizados = ?, universidad = ?, titulo =?,ano_graduacion =?,tipo_estudio = ?, materias_dictar = ? where curp= ? ");
         ps.setString(1,nombreText.getText());
         ps.setString(2,apellidoText.getText());
         ps.setString(3,emailText.getText());
@@ -52,12 +59,12 @@ public class Modificar extends JFrame{
         ps.setString(6,celularText.getText());
         ps.setDate(7, Date.valueOf(fechaNacText.getText()));
         ps.setInt(8, Integer.parseInt(edadText.getText()));
-        ps.setString(9,tipocontratoBox.getActionCommand());
+        ps.setString(9, (String) tipocontratoBox.getSelectedItem());
         ps.setString(10,estudiosrealizadosText.getText());
         ps.setString(11,universidadText.getText());
         ps.setString(12,tituloText.getText());
         ps.setInt(13, Integer.parseInt(anograduText.getText()));
-        ps.setString(14,tipoestudioBox.getActionCommand());
+        ps.setString(14, (String) tipoestudioBox.getSelectedItem());
         ps.setString(15,materiadicText.getText());
         ps.setString(16,curpText.getText());
 

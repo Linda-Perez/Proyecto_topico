@@ -41,6 +41,20 @@ public class Agregar extends JFrame{
                 }
             }
         });
+        registroConsultar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Consultar registroaconsulta = new Consultar();
+                registroaconsulta.setVisible(true);
+            }
+        });
+        registroMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GUI_profesor ir_menu = new GUI_profesor();
+                ir_menu.setVisible(true);
+            }
+        });
     }
      public void insertar() throws SQLException {
         conectar();

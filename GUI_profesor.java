@@ -40,5 +40,12 @@ public GUI_profesor() {
             ir_eliminar.setVisible(true);
         }
     });
+    menuModificar.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Modificar ir_modificar = new Modificar();
+            ir_modificar.setVisible(true);
+        }
+    });
 }
 }

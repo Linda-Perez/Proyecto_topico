@@ -40,6 +40,13 @@ public class Consultar extends JFrame{
                 }
             }
         });
+        menuBt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GUI_profesor consultaamenu = new GUI_profesor();
+                consultaamenu.setVisible(true);
+            }
+        });
     }
 
     public  void lista_consulta() throws SQLException {
